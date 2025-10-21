@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MotoAPP.Views.VisMotoView"
+             Title="VisMotoView">
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <ListView x:Name="MotosListView"
+                  ItemsSource="{Binding Motos}"
+                  SelectedItem="{Binding MotoSelecionada}"
+                  HasUnevenRows="True">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="15" ColumnDefinitions="*, Auto, Auto" ColumnSpacing="10">
+
+                                <VerticalStackLayout Grid.Column="0">
+                                    <Label Text="{Binding Descricao}" FontAttributes="Bold" />
+                                    <Label Text="{Binding Marca}" FontSize="Small" TextColor="Gray" />
+                                </VerticalStackLayout>
+
+                                <Label Grid.Column="1" Text="{Binding Modelo}" VerticalOptions="Center" />
+
+                                <Label Grid.Column="2" Text="{Binding Ano}" VerticalOptions="Center" FontAttributes="Italic" />
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Visualizar" Command="{Binding CommandVisualizar}" Margin="20" />
+
+        </VerticalStackLayout>
+        <!--<Grid RowDefinitions="Auto, *, 50"
+              ColumnDefinitions="*">
+
+            <Label Text="Descrição:"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="1"/>
+            <Label Text="{Binding Descricao}"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="2"/>
+
+            <Label Text="Marca"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="3"/>
+            <Label Text="{Binding Marca}"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="4"/>
+
+            <Label Text="Modelo:"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="5"/>
+            <Label Text="{Binding Modelo}"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="6"/>
+
+            <Label Text="Ano:"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="7"/>
+            <Label Text="{Binding Ano}"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="8"/>
+            <HorizontalStackLayout>
+                <Button Text="Voltar"
+                Command="{Binding CommandVoltar}"/>
+
+                <Button Text="Visualizar"
+                Command="{Binding CommandVisMoto}"/>
+            </HorizontalStackLayout>
+        </Grid>-->
+
+
+    </ScrollView>
+</ContentPage>

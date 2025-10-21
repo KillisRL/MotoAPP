@@ -10,6 +10,6 @@ public partial class PrincipalView : ContentPage
 	{
 		InitializeComponent();
 
-		BindingContext = new UserVM();
+		BindingContext = new MotoVM();
 	}
 }

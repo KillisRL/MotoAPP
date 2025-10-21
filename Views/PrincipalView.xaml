@@ -5,10 +5,19 @@
              Title="Tela Principal"
              WidthRequest="400">
     <ScrollView>
+        <StackLayout>
+            <Label Text="Seja Bem-Vindo!"
+                   FontSize="36"
+                   FontAttributes="Bold"/>
 
-        <Label Text="Seja Bem-Vindo!"
-               FontSize="36"
-               FontAttributes="Bold"/>
+            <Button Text="Voltar"
+                    Command="{Binding CommandVoltar}"/>
 
+            <Button Text="Cadastrar Moto"
+                    Command="{Binding CommandMotoView}"/>
+
+            <Button Text="Visualizar Motos"
+                    Command="{Binding CommandVisMotoView}"/>
+        </StackLayout>
     </ScrollView>
 </ContentPage>

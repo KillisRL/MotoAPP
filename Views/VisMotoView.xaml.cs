@@ -2,9 +2,9 @@ using MotoAPP.ViewModels;
 
 namespace MotoAPP.Views;
 
-public partial class CadMotoView : ContentPage
+public partial class VisMotoView : ContentPage
 {
-	public CadMotoView()
+	public VisMotoView()
 	{
 		InitializeComponent();
 
