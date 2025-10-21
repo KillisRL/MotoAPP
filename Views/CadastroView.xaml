@@ -4,10 +4,14 @@
              x:Class="MotoAPP.Views.CadastroView"
              Title="Cadastro de Usuário">
     <ScrollView>
-        <Border HorizontalOptions="Center"
-                Margin="20">
+        <Border Padding="50">
             
             <StackLayout>
+
+                <Label Text="Login"
+                       HorizontalOptions="Center"
+                       FontSize="36"
+                       FontAttributes="Bold"/>
                 <!-- Username -->
                 <Label Text="Usuário"
                        FontSize="24"
@@ -34,8 +38,10 @@
                        FontSize="24"
                        FontAttributes="Bold"/>
                 <Entry Placeholder="************"
-                       Text="{Binding Senha}"/>
+                       Text="{Binding Senha}"
+                       IsPassword="True"/>
 
+                <StackLayout Padding="20"/>
                 <Button Text="Cadastrar"
                         Command="{Binding CommandCadastrar}"/>
 

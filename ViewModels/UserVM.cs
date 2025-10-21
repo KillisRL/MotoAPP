@@ -79,6 +79,15 @@ namespace MotoAPP.ViewModels
         // MÉTODOS
         void CadastrarUser()
         {
+            if (string.IsNullOrWhiteSpace(Username) ||
+                string.IsNullOrWhiteSpace(Senha) ||
+                string.IsNullOrEmpty(Email) ||
+                string.IsNullOrEmpty(Telefone))
+            {
+                AvisoTela("Por favor, preencha todos os campos");
+                return;
+            }
+
             Usuario user = new Usuario();
 
             user.Username = Username;
@@ -88,16 +97,15 @@ namespace MotoAPP.ViewModels
 
             userService.Insert(user);
 
-            App.Current.MainPage.DisplayAlert("Informação",
-                "Usuário Cadastrado com sucesso", "OK");
-            App.Current.MainPage.Navigation.PushAsync(new LoginView());
+            InfTela("Usuário Cadastrado com sucesso");
+            AbrirView(new LoginView());
         }
+
 
         void Voltar()
         {
-            App.Current.MainPage.Navigation.PopAsync();
+            Voltar();
         }
-
         void CadView()
         {
             AbrirView(new CadastroView());
@@ -105,31 +113,29 @@ namespace MotoAPP.ViewModels
 
         async Task Acessar()
         {
-            // 1. Validação: Verifica se os campos estão vazios
-            if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Senha))
+            // Validação: Verifica se os campos estão vazios
+            if (string.IsNullOrWhiteSpace(Username)
+                || string.IsNullOrWhiteSpace(Senha))
             {
-                await App.Current.MainPage.DisplayAlert("Atenção",
-                    "Por favor, preencha o usuário e a senha.", "OK");
+                AvisoTela("Por favor, preencha o usuário e a senha.");
                 return;
             }
 
-            // 2. Validação: Verifica no banco de dados
+            // Validação: Verifica no banco de dados
             Usuario usuarioValidado = userService.
                 ValidarLogin(Username, Senha);
 
             if (usuarioValidado != null)
             {
                 // Login bem-sucedido
-                await App.Current.MainPage.DisplayAlert("Sucesso",
-                    $"Bem-vindo, {usuarioValidado.Username}!", "OK");
+                InfTela($"Bem-vindo, {usuarioValidado.Username}!");
 
                 AbrirView(new PrincipalView());
             }
             else
             {
                 // Login falhou
-                await App.Current.MainPage.DisplayAlert("Erro",
-                    "Usuário ou senha inválidos.", "OK");
+                ErroTela("Usuário ou senha inválidos");
             }
         }
 
