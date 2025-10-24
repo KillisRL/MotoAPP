@@ -104,18 +104,6 @@ namespace MotoAPP.ViewModels
             AbrirView(new VisMotoView());
         }
 
-        //void VisMoto()
-        //{
-        //    Moto moto = new Moto();
-
-        //    Descricao = moto.Descricao;
-        //    Marca = moto.Marca;
-        //    Modelo = moto.Modelo;
-        //    Ano = moto.Ano;
-
-        //    motoservice.GetAll();
-        //}
-
         void VisMoto()
         {
             // 1. Chama o método GetAll do Service
@@ -125,13 +113,9 @@ namespace MotoAPP.ViewModels
             Motos = new ObservableCollection<Moto>(listaDoDB);
         }
 
-        void Voltar()
+        void MotoCadView()
         {
-            Voltar();
-        }
-        void MotoView()
-        {
-            AbrirView(new VisMotoView());
+            AbrirView(new CadMotoView());
         }
 
         void MotoVisView()
@@ -144,10 +128,10 @@ namespace MotoAPP.ViewModels
         public MotoVM()
         {
             CommandCadastrar = new Command(CadastrarMoto);
-            CommandVoltar = new Command(Voltar);
-            CommandMotoView = new Command(MotoView);
+            CommandVoltar = new Command (base.Voltar);
+            CommandMotoView = new Command(MotoCadView);
             CommandVisualizar = new Command(VisMoto);
-            CommandVisMotoView = new Command(MotoView);
+            CommandVisMotoView = new Command(MotoVisView);
         }
     }
 }

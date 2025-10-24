@@ -38,6 +38,22 @@ namespace MotoAPP.Services
             return null;
         }
 
+        public Usuario UsuarioLogado(string username, string senha)
+        {
+            // Procura por um usuário com o mesmo username
+            var usuario = _connection.Table<Usuario>()
+                                     .Where(u => u.Username == username)
+                                     .FirstOrDefault();
+
+            // Se encontrou um usuário...
+            if (usuario != null)
+            {
+                return usuario;
+            }
+            return null;
+        }
+
+
         // Consultas do Banco
 
         public bool Insert(Usuario value)

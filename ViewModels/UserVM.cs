@@ -101,7 +101,6 @@ namespace MotoAPP.ViewModels
             AbrirView(new LoginView());
         }
 
-
         void Voltar()
         {
             Voltar();

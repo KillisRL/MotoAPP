@@ -11,13 +11,16 @@
                    FontAttributes="Bold"/>
 
             <Button Text="Voltar"
-                    Command="{Binding CommandVoltar}"/>
+                    Command="{Binding CommandVoltar}"
+                    Margin="0,20,0,0"/>
 
             <Button Text="Cadastrar Moto"
-                    Command="{Binding CommandMotoView}"/>
+                    Command="{Binding CommandMotoView}"
+                    Margin="0,20,0,0"/>
 
             <Button Text="Visualizar Motos"
-                    Command="{Binding CommandVisMotoView}"/>
+                    Command="{Binding CommandVisMotoView}"
+                    Margin="0,20,0,0"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
