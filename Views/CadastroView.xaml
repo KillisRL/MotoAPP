@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MotoAPP.Views.CadastroView"
-             Title="Cadastro de Usuário">
+             Title="Cadastro de Usuário"
+             WidthRequest="400 ">
     <ScrollView>
         <Border Padding="50">
             

@@ -7,6 +7,7 @@
     <ScrollView>
         <VerticalStackLayout>
 
+            <!--#region List View-->
             <ListView x:Name="MotosListView"
                   ItemsSource="{Binding Motos}"
                   SelectedItem="{Binding MotoSelecionada}"
@@ -20,13 +21,13 @@
                                   ColumnSpacing="10">
 
                                 <VerticalStackLayout Grid.Column="0">
-                                    
+
                                     <Label Text="{Binding Descricao}" 
                                            FontAttributes="Bold" />
                                     <Label Text="{Binding Marca}" 
                                            FontSize="Small" 
                                            TextColor="Gray" />
-                                    
+
                                 </VerticalStackLayout>
 
                                 <Label Grid.Column="1" 
@@ -43,7 +44,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
+            <!--#endregion-->
             <Button Text="Visualizar" 
                     Command="{Binding CommandVisualizar}" 
                     Margin="0,20,0,0" />
@@ -53,53 +54,6 @@
                     Margin="0,20,0,0"/>
 
         </VerticalStackLayout>
-        <!--<Grid RowDefinitions="Auto, *, 50"
-              ColumnDefinitions="*">
-
-            <Label Text="Descrição:"
-                   FontSize="16"
-                   Grid.Column="1"
-                   Grid.Row="1"/>
-            <Label Text="{Binding Descricao}"
-                   FontSize="16"
-                   Grid.Column="1"
-                   Grid.Row="2"/>
-
-            <Label Text="Marca"
-                   FontSize="16"
-                   Grid.Column="1"
-                   Grid.Row="3"/>
-            <Label Text="{Binding Marca}"
-                   FontSize="16"
-                   Grid.Column="1"
-                   Grid.Row="4"/>
-
-            <Label Text="Modelo:"
-                   FontSize="16"
-                   Grid.Column="1"
-                   Grid.Row="5"/>
-            <Label Text="{Binding Modelo}"
-                   FontSize="16"
-                   Grid.Column="1"
-                   Grid.Row="6"/>
-
-            <Label Text="Ano:"
-                   FontSize="16"
-                   Grid.Column="1"
-                   Grid.Row="7"/>
-            <Label Text="{Binding Ano}"
-                   FontSize="16"
-                   Grid.Column="1"
-                   Grid.Row="8"/>
-            <HorizontalStackLayout>
-                <Button Text="Voltar"
-                Command="{Binding CommandVoltar}"/>
-
-                <Button Text="Visualizar"
-                Command="{Binding CommandVisMoto}"/>
-            </HorizontalStackLayout>
-        </Grid>-->
-
 
     </ScrollView>
 </ContentPage>
